@@ -56,3 +56,6 @@ Note that Google only allows 5 Colab sessions to be active at once, which the se
 Feel free to fiddle with the hyperparameters of the search, and to replicate performance sample and comparison results. However, we cannot guarantee that code changed outside of the specified sections will still work effectively.
 To the reviewer who requested this code upload, we hope that this repository and these instructions are to your satisfication, and thank you for your efforts in increasing the contribution of this work.
 
+## Author information
+This code and documentation was written by Jared F. O'Reilly, contributing towards his Masters degree in Computer Science at the University of Pretoria, South Africa. This code was written throughout 2021, but this repository was made available in December 2021.
+
