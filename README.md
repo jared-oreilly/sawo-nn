@@ -44,6 +44,8 @@ Nothing needs to be manually installed to run the project, as Google Colaborator
 7. The search has now been launched, and the runners should immediately begin evaluating their assigned members, with your patience ensuring they are getting the correctly updated files.
 8. You can track the progress of the search in Controller, by scrolling down to the currently executing code block, which shows you which generation the search is on. Note that the searches done in the research take between 4 to 5 hours to execute.
 
+**NOTE**: Keep all tabs needed for the search open, and do not disconnect from the Internet. Colab will terminate the execution of a notebook if it does not frequently receive a 'ping' from the opened notebook on your computer.
+
 ### Performance samples and comparison
 1. In the My Drive/Colab Notebooks/TestSAWO folder on Google Drive, double click on the SampleComparison notebook to open it, and wait for it to load.
 2. Once loaded, you can change the dataset used, as well as specify whether you want to completely regenerate the best SAWO-NN's performance sample on that dataset or just use the pre-computed performance sample. 
@@ -51,9 +53,13 @@ Nothing needs to be manually installed to run the project, as Google Colaborator
 4. Wait for the notebook to finish executing i.e for the last code block to finish. If you are regenerating, this will take about 20-25 minutes, but if not, this should take about 2 minutes.
 5. Scroll down. The 3rd last code block will have printed the SAWO-NN performance sample, the 2nd last block will have printed the baseline performance sample, and the last code block will have printed the hypothesis testing result.
 
+**NOTE**: Keep this notebook tab open, and do not disconnect from the Internet. Colab will terminate the execution of a notebook if it does not frequently receive a 'ping' from the opened notebook on your computer.
+
 ## Closing remarks
 Note that Google only allows 5 Colab sessions to be active at once, which the search completely takes up. You may need to terminate one of the sessions used to search when it is completed, in order to do performance sample comparisons with the other notebook.
+
 Feel free to fiddle with the hyperparameters of the search, and to replicate performance sample and comparison results. However, we cannot guarantee that code changed outside of the specified sections will still work effectively.
+
 To the reviewer who requested this code upload, we hope that this repository and these instructions are to your satisfication, and thank you for your efforts in increasing the contribution of this work.
 
 ## Author information
