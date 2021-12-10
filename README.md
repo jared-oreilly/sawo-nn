@@ -2,7 +2,7 @@
 
 Welcome to the SAWO-NN repository on Github. This code is considered supplementary material for a journal paper currently under review. This README describes all the moving parts of this project, how to install the project onto your Google Drive, and how to run the project using Google Colaboratory.
 
-## Description
+## Code description
 - **control** folder: This folder contains JSON files, used to enable the parallelizability of grammatical evolution. The Controller notebook writes to these files before each generation. The Runner notebooks read this information and evaluate population members, storing their results in these files. The Controller notebook then reads the evaluations, and uses them to create the next generation, and so on.
 - **datasets** folder: This folder contains pre-processed input and target NumPy arrays for each of the 12 datasets. A note here that the dataset IDs are slightly different as to in the paper, as described in the table below. Therefore, to reproduce results for a particular dataset ID from the paper, please use the corresponding code ID.
 
@@ -23,7 +23,7 @@ Welcome to the SAWO-NN repository on Github. This code is considered supplementa
 - **SawoNN.py**: This Python class implements a SAWO-NN as described in the paper. To instantiate a SAWO-NN, information must be provided on layer sizes, the primary architecture, and each weight update equation. The needed weights and architectures can then be calculated. To train a SAWO-NN on some inputs and targets, the training process in the paper is followed. This class implements the vital function used to calculate the error derivative of any set-of-weights in any initialised architecture, thanks to some clever usage of Tensorflow's GradientTape and the **Architecture.py** class.
 - **grammar.txt**: This text file contains the grammar rules specified in the paper, albeit with symbols linked to a single output replaced with that output, which avoids redundant codons without decreasing the possible search space. This file is read and parsed by the **RuleSet.py** class.
 
-## Installation
+## Installation on Google Drive
 The only pre-requisites for installation is that you have a Google account, with Google Drive. The only web browser we have used for this is Google Chrome, but we think any web browser should work - but we cannot confirm this. Please follow the below steps to install the project:
 1. From the homepage of this repository, click the green Code button and select the 'Download Zip' dropdown, which will download a zipped version of the project to your computer. 
 2. Unzip the zipped project, which will produce a sawo-nn-main folder. Go into the folder. You will see another folder called sawo-nn-main. Go into this folder. You will then see a multitude of folders and files, as described in the previous section. This is the source code.
@@ -31,4 +31,21 @@ The only pre-requisites for installation is that you have a Google account, with
 4. Upload all the files in the folder reached in step 2 (Your PC/sawo-nn-main/sawo-nn-main/\*) to the current folder you are in on your Google Drive (My Drive/Colab Notebooks/TestSAWO). You can do this by dragging and dropping all the files from your file explorer, or by manually uploading using the 'New' button on Google Drive.
 5. Once the upload is complete, the project is installed on your Google Drive.
 
-## Running the project using Google Colaboratory
+## Running the project with Google Colaboratory
+Nothing needs to be manually installed to run the project, as Google Colaboratory (or 'Colab') handles all necessary package installation and Tensorflow configuration. There are two ways to run this project: perform a run of the grammatical evolution to search for optimal SAWO-NNs, and create a performance sample of a found SAWO-NN to compare against the optimized baseline model for a particular dataset.
+
+### Grammatical evolution search
+1. In the My Drive/Colab Notebooks/TestSAWO folder on Google Drive, double click on the following notebooks to open them: Controller, Runner_1, Runner_2, Runner_3, Runner_4. Wait for them all to load.
+2. Navigate to Controller. This is used to launch a run. You can edit some hyperparameters near the top of the notebook, where specified by the comments in the code.
+3. Click the 'Runtime' dropdown, and select 'Run all'. The first code block involves getting access to your Google Drive, and on your first time doing this, Colab should ask you to authenticate yourself by logging in to your Google account. Do this, and the rest of the code will start to execute.
+4. Wait for approximately 2 minutes, to allow for initial population generation, for the population to be stored in the control files, and for these files to actually update on Google Drive. Note that Google Drive is a pseudo file system, so writing to files by code is not actually instantaneous, hence the waiting period.
+5. After waiting, navigate to Runner_1. Click the 'Runtime' dropdown, and select 'Run all'. You may have to authenticate again for this notebook, please do so. 
+6. Perform step 5 above for Runner_2, Runner_3 and Runner_4, authenticating wherever needed.
+7. The search has now been launched, and the runners should immediately begin evaluating their assigned members, with your patience ensuring they are getting the correctly updated files.
+8. You can track the progress of the search in Controller, by scrolling down to the currently executing code block, which shows you which generation the search is on. Note that the searches done in the research take between 4 to 5 hours to execute.
+
+### Performance samples and comparison
+1. In the My Drive/Colab Notebooks/TestSAWO folder on Google Drive, double click on the SampleComparison notebooks to open it, and wait for it to load.
+2. Once loaded, you can change the dataset used, as well as specify whether you want to completely regenerate the best SAWO-NN's performance sample on that dataset or just use the pre-computed performance sample. 
+3. Click the 'Runtime' dropdown, and select 'Run all'. The first code block involves getting access to your Google Drive, and on your first time doing this, Colab should ask you to authenticate yourself by logging in to your Google account. Do this, and the rest of the code will start to execute.
+4. Wait for the notebook to finish executing i.e for the last code block to finish. If you are regenerating, this will take about 20-25 minutes, but if not, this should take about 2 minutes.
