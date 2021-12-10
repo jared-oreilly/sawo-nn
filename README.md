@@ -24,3 +24,11 @@ Welcome to the SAWO-NN repository on Github. This code is considered supplementa
 - **grammar.txt**: This text file contains the grammar rules specified in the paper, albeit with symbols linked to a single output replaced with that output, which avoids redundant codons without decreasing the possible search space. This file is read and parsed by the **RuleSet.py** class.
 
 ## Installation
+The only pre-requisites for installation is that you have a Google account, with Google Drive. The only web browser we have used for this is Google Chrome, but we think any web browser should work - but we cannot confirm this. Please follow the below steps to install the project:
+1. From the homepage of this repository, click the green Code button and select the 'Download Zip' dropdown, which will download a zipped version of the project to your computer. 
+2. Unzip the zipped project, which will produce a sawo-nn-main folder. Go into the folder. You will see another folder called sawo-nn-main. Go into this folder. You will then see a multitude of folders and files, as described in the previous section. This is the source code.
+3. Go to the homepage of your Google Drive using Google Chrome i.e. the 'My Drive' folder. If a folder named 'Colab Notebooks' does not already exist, create it, and go into this folder. Create a new folder called 'TestSAWO'. Go into this folder.
+4. Upload all the files in the folder reached in step 2 (Your PC/sawo-nn-main/sawo-nn-main/\*) to the current folder you are in on your Google Drive (My Drive/Colab Notebooks/TestSAWO). You can do this by dragging and dropping all the files from your file explorer, or by manually uploading using the 'New' button on Google Drive.
+5. Once the upload is complete, the project is installed on your Google Drive.
+
+## Running the project using Google Colaboratory
