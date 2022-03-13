@@ -1,6 +1,6 @@
 # SAWO-NN repository
 
-Welcome to the SAWO-NN repository on Github. This code is considered supplementary material for a journal paper currently under review. This README describes the code artifacts of the project, how to install the project onto your Google Drive, and how to run the project using Google Colaboratory.
+Welcome to the SAWO-NN repository on Github. This code is considered supplementary material for a journal article published in the Springer journal of Neural Computing and Applications in March 2022, available at https://link.springer.com/article/10.1007/s00521-022-07035-5. This README describes the code artifacts of the project, how to install the project onto your Google Drive, and how to run the project using Google Colaboratory.
 
 ## Code description
 - **control** folder: This folder contains JSON files, used to enable the parallelizability of grammatical evolution. The Controller notebook writes to these files before each generation. The Runner notebooks read this information and evaluate population members, storing their results in these files. The Controller notebook then reads the evaluations, and uses them to create the next generation, and so on.
